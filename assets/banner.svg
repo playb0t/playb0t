@@ -1,60 +1,40 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" width="760" height="330" role="img" aria-label="playb0t terminal — independent AI security research">
-  <defs>
-    <style>
-      .mono { font-family: 'SF Mono','Cascadia Code','JetBrains Mono','Fira Code',Consolas,ui-monospace,monospace; }
-      .cmd  { fill:#e6edf3; }
-      .dim  { fill:#8b98a5; }
-      .grn  { fill:#3fb950; }
-      .cyn  { fill:#58a6ff; }
-      .ttl  { fill:#5b6675; }
-    </style>
-  </defs>
-
   <!-- window -->
   <rect x="8" y="8" width="744" height="314" rx="12" fill="#0b0f17" stroke="#222b3a" stroke-width="1"/>
-  <!-- title bar divider -->
   <line x1="8" y1="46" x2="752" y2="46" stroke="#1a2230" stroke-width="1"/>
-  <!-- traffic lights -->
   <circle cx="30" cy="27" r="6" fill="#ff5f56"/>
   <circle cx="50" cy="27" r="6" fill="#ffbd2e"/>
   <circle cx="70" cy="27" r="6" fill="#27c93f"/>
-  <text class="mono ttl" x="380" y="32" text-anchor="middle" font-size="13">playb0t@research — ~/research</text>
+  <text x="380" y="32" text-anchor="middle" font-family="'SF Mono','Cascadia Code',Consolas,ui-monospace,monospace" font-size="13" fill="#5b6675">playb0t@research — ~/research</text>
 
-  <g class="mono" font-size="16.5">
-    <!-- line 1 -->
+  <g font-family="'SF Mono','Cascadia Code','JetBrains Mono',Consolas,ui-monospace,monospace" font-size="16.5">
     <g opacity="0">
       <animate attributeName="opacity" from="0" to="1" begin="0.2s" dur="0.25s" fill="freeze"/>
-      <text x="30" y="92"><tspan class="grn">$</tspan><tspan class="cmd"> whoami</tspan></text>
+      <text x="30" y="92"><tspan fill="#3fb950">$</tspan><tspan fill="#e6edf3"> whoami</tspan></text>
     </g>
-    <!-- line 2 -->
     <g opacity="0">
       <animate attributeName="opacity" from="0" to="1" begin="0.5s" dur="0.25s" fill="freeze"/>
-      <text x="50" y="120"><tspan class="cyn">ai-security</tspan><tspan class="dim"> · agent trust boundaries</tspan></text>
+      <text x="50" y="120"><tspan fill="#58a6ff">ai-security</tspan><tspan fill="#8b98a5"> · agent trust boundaries</tspan></text>
     </g>
-    <!-- line 3 -->
     <g opacity="0">
       <animate attributeName="opacity" from="0" to="1" begin="0.9s" dur="0.25s" fill="freeze"/>
-      <text x="30" y="162"><tspan class="grn">$</tspan><tspan class="cmd"> cat focus</tspan></text>
+      <text x="30" y="162"><tspan fill="#3fb950">$</tspan><tspan fill="#e6edf3"> cat focus</tspan></text>
     </g>
-    <!-- line 4 -->
     <g opacity="0">
       <animate attributeName="opacity" from="0" to="1" begin="1.2s" dur="0.25s" fill="freeze"/>
-      <text x="50" y="190"><tspan class="dim">hooks · rewrite pipelines · the files an agent auto-trusts</tspan></text>
+      <text x="50" y="190"><tspan fill="#8b98a5">hooks · rewrite pipelines · the files an agent auto-trusts</tspan></text>
     </g>
-    <!-- line 5 -->
     <g opacity="0">
       <animate attributeName="opacity" from="0" to="1" begin="1.6s" dur="0.25s" fill="freeze"/>
-      <text x="30" y="232"><tspan class="grn">$</tspan><tspan class="cmd"> ls selected_work/</tspan></text>
+      <text x="30" y="232"><tspan fill="#3fb950">$</tspan><tspan fill="#e6edf3"> ls selected_work/</tspan></text>
     </g>
-    <!-- line 6 -->
     <g opacity="0">
       <animate attributeName="opacity" from="0" to="1" begin="1.9s" dur="0.25s" fill="freeze"/>
-      <text x="50" y="260"><tspan class="cyn">rtk-ai/rtk</tspan><tspan class="dim"> · hook-integrity (SHA-256) · </tspan><tspan class="cyn">PR #119</tspan><tspan class="grn"> ✓</tspan><tspan class="dim"> merged</tspan></text>
+      <text x="50" y="260"><tspan fill="#58a6ff">rtk-ai/rtk</tspan><tspan fill="#8b98a5"> · hook-integrity (SHA-256) · </tspan><tspan fill="#58a6ff">PR #119</tspan><tspan fill="#3fb950"> ✓</tspan><tspan fill="#8b98a5"> merged</tspan></text>
     </g>
-    <!-- prompt + cursor -->
     <g opacity="0">
       <animate attributeName="opacity" from="0" to="1" begin="2.2s" dur="0.2s" fill="freeze"/>
-      <text x="30" y="300"><tspan class="grn">$</tspan></text>
+      <text x="30" y="300"><tspan fill="#3fb950">$</tspan></text>
       <rect x="46" y="287" width="9" height="17" fill="#3fb950">
         <animate attributeName="opacity" values="1;1;0;0" dur="1.06s" repeatCount="indefinite"/>
       </rect>
