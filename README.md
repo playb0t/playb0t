@@ -3,7 +3,7 @@
 </p>
 
 I look at where LLM coding agents hand execution to local infrastructure with no
-human in the loop — and I harden it.
+human in the loop - and I harden it.
 
 ### Selected work
 
