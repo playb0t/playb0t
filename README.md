@@ -1,16 +1,9 @@
-```text
-playb0t · independent AI security research
-───────────────────────────────────────────
- focus    trust boundaries in agent tooling —
-          hooks, rewrite pipelines, the local
-          files an LLM agent auto-trusts
- method   threat-model the auto-trust,
-          then ship the mitigation
- ethics   coordinated disclosure
-```
+<p align="center">
+  <img src="assets/banner.svg" width="760" alt="playb0t — independent AI security research">
+</p>
 
-I look at where LLM coding agents hand execution to local infrastructure
-with no human in the loop — and I harden it.
+I look at where LLM coding agents hand execution to local infrastructure with no
+human in the loop — and I harden it.
 
 ### Selected work
 
@@ -24,6 +17,8 @@ with no human in the loop — and I harden it.
 > the fail-closed integrity gate: a 525-line Rust module with a five-state
 > verification machine, an `rtk verify` subcommand, read-only baseline hashes, and
 > 14 unit tests. Tampered hook → RTK refuses to run.
+>
+> Writeup → [`rtk-hook-integrity`](https://github.com/playb0t/rtk-hook-integrity)
 
 ```python
 interests = ["cognitive exploits", "cryptographic architecture", "coordinated disclosure"]
