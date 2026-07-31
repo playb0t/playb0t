@@ -1,21 +1,23 @@
 <p align="center">
-  <img src="assets/banner.svg" width="760" alt="playb0t — independent AI security research">
+  <img src="assets/banner.svg" width="760" alt="playb0t — MCP and agent trust-boundary security research">
 </p>
 
-I look at where LLM coding agents hand execution to local infrastructure with no
-human in the loop - and I harden it.
+I look at where MCP clients and LLM coding agents hand trust to remote metadata
+or local infrastructure with no human in the loop — and I harden it.
 
 ### Selected work
 
 **[mcp-remote OAuth trust-boundary research](https://github.com/playb0t/mcp-remote-oauth-security)** · 7 advisories · coordinated disclosure
 
-> **Attack surface** — `WWW-Authenticate` → resource metadata → authorization-server discovery → redirects / browser launch / SSE transport.
+> **Reviewed surfaces** — resource metadata, authorization-server discovery,
+> redirect handling, browser navigation, local credentials, and SSE transport.
 >
-> Public research release for `geelen/mcp-remote` versions `0.1.16` through
-> `0.1.38`: two localhost-canary PoCs, four bounded source-review findings, and
-> one conditional defense-in-depth finding. No weaponized exploit code published.
+> Public research release for `geelen/mcp-remote`, reviewed through `0.1.38`.
+> Relevant ranges differ by advisory: two localhost-canary PoCs, three bounded
+> source-review findings, and two defense-in-depth/correction records. No
+> weaponized exploit code published.
 >
-> Release → [`v1.0.0`](https://github.com/playb0t/mcp-remote-oauth-security/releases/tag/v1.0.0)
+> Corrective release → [`v1.0.1`](https://github.com/playb0t/mcp-remote-oauth-security/releases/tag/v1.0.1)
 
 **[rtk-ai/rtk](https://github.com/rtk-ai/rtk)** · 74k★ · Rust command-proxy for coding agents
 
@@ -31,5 +33,5 @@ human in the loop - and I harden it.
 > Writeup → [`rtk-hook-integrity`](https://github.com/playb0t/rtk-hook-integrity)
 
 ```python
-interests = ["cognitive exploits", "cryptographic architecture", "coordinated disclosure"]
+interests = ["MCP/OAuth trust boundaries", "cryptographic architecture", "coordinated disclosure"]
 ```

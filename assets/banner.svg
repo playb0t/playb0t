@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" width="760" height="330" role="img" aria-label="playb0t terminal — independent AI security research">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380" role="img" aria-label="playb0t terminal — MCP and agent trust-boundary security research">
   <!-- window -->
-  <rect x="8" y="8" width="744" height="314" rx="12" fill="#0b0f17" stroke="#222b3a" stroke-width="1"/>
+  <rect x="8" y="8" width="744" height="364" rx="12" fill="#0b0f17" stroke="#222b3a" stroke-width="1"/>
   <line x1="8" y1="46" x2="752" y2="46" stroke="#1a2230" stroke-width="1"/>
   <circle cx="30" cy="27" r="6" fill="#ff5f56"/>
   <circle cx="50" cy="27" r="6" fill="#ffbd2e"/>
@@ -22,7 +22,7 @@
     </g>
     <g opacity="0">
       <animate attributeName="opacity" from="0" to="1" begin="1.2s" dur="0.25s" fill="freeze"/>
-      <text x="50" y="190"><tspan fill="#8b98a5">hooks · rewrite pipelines · the files an agent auto-trusts</tspan></text>
+      <text x="50" y="190"><tspan fill="#8b98a5">OAuth metadata · hooks · agent trust boundaries</tspan></text>
     </g>
     <g opacity="0">
       <animate attributeName="opacity" from="0" to="1" begin="1.6s" dur="0.25s" fill="freeze"/>
@@ -30,12 +30,16 @@
     </g>
     <g opacity="0">
       <animate attributeName="opacity" from="0" to="1" begin="1.9s" dur="0.25s" fill="freeze"/>
-      <text x="50" y="260"><tspan fill="#58a6ff">rtk-ai/rtk</tspan><tspan fill="#8b98a5"> · hook-integrity (SHA-256) · </tspan><tspan fill="#58a6ff">PR #119</tspan><tspan fill="#3fb950"> ✓</tspan><tspan fill="#8b98a5"> merged</tspan></text>
+      <text x="50" y="260"><tspan fill="#a78bfa">mcp-remote</tspan><tspan fill="#8b98a5"> · OAuth trust boundaries · </tspan><tspan fill="#a78bfa">7 advisories</tspan><tspan fill="#3fb950"> ✓</tspan><tspan fill="#8b98a5"> public</tspan></text>
     </g>
     <g opacity="0">
       <animate attributeName="opacity" from="0" to="1" begin="2.2s" dur="0.2s" fill="freeze"/>
-      <text x="30" y="300"><tspan fill="#3fb950">$</tspan></text>
-      <rect x="46" y="287" width="9" height="17" fill="#3fb950">
+      <text x="50" y="292"><tspan fill="#58a6ff">rtk-ai/rtk</tspan><tspan fill="#8b98a5"> · hook-integrity (SHA-256) · </tspan><tspan fill="#58a6ff">PR #119</tspan><tspan fill="#3fb950"> ✓</tspan><tspan fill="#8b98a5"> merged</tspan></text>
+    </g>
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="2.5s" dur="0.2s" fill="freeze"/>
+      <text x="30" y="350"><tspan fill="#3fb950">$</tspan></text>
+      <rect x="46" y="337" width="9" height="17" fill="#3fb950">
         <animate attributeName="opacity" values="1;1;0;0" dur="1.06s" repeatCount="indefinite"/>
       </rect>
     </g>
