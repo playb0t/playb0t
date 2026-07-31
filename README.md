@@ -17,7 +17,7 @@ or local infrastructure with no human in the loop — and I harden it.
 > source-review findings, and two defense-in-depth/correction records. No
 > weaponized exploit code published.
 >
-> Corrective release → [`v1.0.1`](https://github.com/playb0t/mcp-remote-oauth-security/releases/tag/v1.0.1)
+> Research repository → [`mcp-remote-oauth-security`](https://github.com/playb0t/mcp-remote-oauth-security)
 
 **[rtk-ai/rtk](https://github.com/rtk-ai/rtk)** · 74k★ · Rust command-proxy for coding agents
 
