@@ -7,7 +7,17 @@ human in the loop - and I harden it.
 
 ### Selected work
 
-**[rtk-ai/rtk](https://github.com/rtk-ai/rtk)** · 71k★ · Rust command-proxy for coding agents
+**[mcp-remote OAuth trust-boundary research](https://github.com/playb0t/mcp-remote-oauth-security)** · 7 advisories · coordinated disclosure
+
+> **Attack surface** — `WWW-Authenticate` → resource metadata → authorization-server discovery → redirects / browser launch / SSE transport.
+>
+> Public research release for `geelen/mcp-remote` versions `0.1.16` through
+> `0.1.38`: two localhost-canary PoCs, four bounded source-review findings, and
+> one conditional defense-in-depth finding. No weaponized exploit code published.
+>
+> Release → [`v1.0.0`](https://github.com/playb0t/mcp-remote-oauth-security/releases/tag/v1.0.0)
+
+**[rtk-ai/rtk](https://github.com/rtk-ai/rtk)** · 74k★ · Rust command-proxy for coding agents
 
 > **SHA-256 hook-integrity verification** - [PR #119](https://github.com/rtk-ai/rtk/pull/119), merged after security review.
 >
