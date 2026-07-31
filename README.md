@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" width="760" alt="playb0t — MCP and agent trust-boundary security research">
+  <img src="assets/banner.svg?v=20260731" width="760" alt="playb0t — MCP and agent trust-boundary security research">
 </p>
 
 I look at where MCP clients and LLM coding agents hand trust to remote metadata
