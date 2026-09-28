@@ -1,11 +1,27 @@
 <p align="center">
-  <img src="assets/cve-research-banner.svg" width="100%" alt="playb0t MCP security research — 5 published CVE records, 2 reserved IDs, CISA-ADP CVSS 3.1 scores of 9.1 Critical, 8.8 High and 7.5 High">
+  <img src="assets/cve-research-banner.svg" width="100%" alt="playb0t AI systems engineering and security research — selected work referenced by 5 published CVE records, with CISA-ADP scores of 9.1 Critical, 8.8 High and 7.5 High">
 </p>
 
-## AI security research at the point of execution
+## AI systems engineer & security researcher
 
-I investigate how MCP clients and coding agents turn remote metadata, OAuth
-discovery and local automation into trusted actions.
+I design, build and investigate AI agent systems: how agents coordinate work,
+share state, carry authority and act on real infrastructure.
+
+My work connects **agent systems architecture**, **adversarial security
+research** and **practical engineering**. I follow a problem from its trust
+boundary into the runtime, the evidence and the implementation.
+
+### Building agent coordination infrastructure
+
+I'm building **coord-hub**, a local coordination layer for pre-existing AI
+agents operated by different people. The work focuses on explicit task state,
+scoped delegation, human approval and verifiable records of execution.
+
+This is an active engineering project. Its development connects orchestration,
+persistent state, cryptographic integrity and the practical question of who
+can authorize an agent's next action.
+
+### Featured research · Official CVE publications
 
 **Five published CVE records reference my mcp-remote research. CISA-ADP rates
 three of them 9.1 Critical, 8.8 High and 7.5 High.** The published MITRE CNA
@@ -71,5 +87,5 @@ fails verification instead of continuing through the trusted command path.
 
 ### Focus
 
-MCP and OAuth security · Agent execution boundaries · Adversarial testing ·
-Cryptographic integrity · Coordinated disclosure
+AI systems architecture · Agent coordination and orchestration · Runtime
+security · Adversarial testing · Cryptographic integrity · Coordinated disclosure
