@@ -80,8 +80,9 @@ source reviews and two hardening/correction records.
 
 **[rtk-ai/rtk — SHA-256 hook integrity](https://github.com/rtk-ai/rtk/pull/119)**
 
-I contributed an integrity gate for local coding-agent hooks. A modified hook
-fails verification instead of continuing through the trusted command path.
+I contributed an integrity gate for local coding-agent hooks. The contribution
+checks an installed hook against its recorded hash and refuses operational
+commands when that check detects a mismatch.
 [PR #119](https://github.com/rtk-ai/rtk/pull/119) was merged; the
 [technical writeup](https://github.com/playb0t/rtk-hook-integrity) documents the work.
 
