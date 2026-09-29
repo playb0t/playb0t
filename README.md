@@ -30,7 +30,7 @@ information disclosure.
 
 [Research package](https://github.com/playb0t/mcp-remote-oauth-security)
 · [Disclosure timeline](https://github.com/playb0t/mcp-remote-oauth-security/blob/v1.0.1/TIMELINE.md)
-· [Research scope and corrections](https://github.com/playb0t/mcp-remote-oauth-security/blob/v1.0.1/CORRECTIONS.md)
+· [Research scope and corrections](https://github.com/playb0t/mcp-remote-oauth-security/blob/v1.0.2/CORRECTIONS.md)
 
 ### Published CVE records
 
@@ -41,7 +41,7 @@ in the research package.
 | Official CVE record | Published MITRE CNA description | CISA-ADP CVSS 3.1 |
 |---|---|---|
 | [CVE-2026-51994](https://www.cve.org/CVERecord?id=CVE-2026-51994) | SSRF through the `resource_metadata` URL in a remote MCP server's `WWW-Authenticate` header | **9.1 · Critical** |
-| [CVE-2026-51995](https://www.cve.org/CVERecord?id=CVE-2026-51995) | Remote disclosure of sensitive information through OAuth authorization-server metadata components | **7.5 · High** |
+| [CVE-2026-51995](https://www.cve.org/CVERecord?id=CVE-2026-51995) | Remote disclosure of sensitive information through the authorization-server-metadata and utils components | **7.5 · High** |
 | [CVE-2026-51996](https://www.cve.org/CVERecord?id=CVE-2026-51996) | Arbitrary code execution by a remote attacker through `getServerUrlHash` | **9.8 · Critical** |
 | [CVE-2026-51997](https://www.cve.org/CVERecord?id=CVE-2026-51997) | Arbitrary code execution by a remote attacker through `open()` | **8.8 · High** |
 | [CVE-2026-52001](https://www.cve.org/CVERecord?id=CVE-2026-52001) | Remote disclosure of sensitive information through the SSE `eventSourceInit` fetch wrapper | Not provided |
