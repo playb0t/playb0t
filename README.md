@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="assets/cve-research-banner.svg" width="100%" alt="playb0t AI systems engineering and security research — selected work referenced by 5 published CVE records, with CISA-ADP scores of 9.1 Critical, 8.8 High and 7.5 High">
+  <img src="assets/cve-research-banner.svg" width="100%" alt="Alex Gercog (playb0t), AI systems engineering and security research: selected work referenced by 5 published CVE records, with CISA-ADP scores of 9.8 and 9.1 Critical, 8.8 and 7.5 High">
 </p>
 
-## AI systems engineer & security researcher
+## Alex Gercog · AI systems engineer & security researcher
 
 I design, build and investigate AI agent systems: how agents coordinate work,
 share state, carry authority and act on real infrastructure.
@@ -24,7 +24,7 @@ can authorize an agent's next action.
 ### Featured research · Official CVE publications
 
 **Five published CVE records reference my mcp-remote research. CISA-ADP rates
-three of them 9.1 Critical, 8.8 High and 7.5 High.** The published MITRE CNA
+four of them: 9.8 and 9.1 Critical, 8.8 and 7.5 High.** The published MITRE CNA
 descriptions cover SSRF, remote arbitrary code execution and sensitive
 information disclosure.
 
@@ -35,22 +35,21 @@ information disclosure.
 ### Published CVE records
 
 MITRE CNA publication: **24 September 2026**. Status and score verification:
-**28 September 2026**. Every record below directly links to a versioned advisory
+**29 September 2026**. Every record below directly links to a versioned advisory
 in the research package.
 
 | Official CVE record | Published MITRE CNA description | CISA-ADP CVSS 3.1 |
 |---|---|---|
 | [CVE-2026-51994](https://www.cve.org/CVERecord?id=CVE-2026-51994) | SSRF through the `resource_metadata` URL in a remote MCP server's `WWW-Authenticate` header | **9.1 · Critical** |
 | [CVE-2026-51995](https://www.cve.org/CVERecord?id=CVE-2026-51995) | Remote disclosure of sensitive information through OAuth authorization-server metadata components | **7.5 · High** |
-| [CVE-2026-51996](https://www.cve.org/CVERecord?id=CVE-2026-51996) | Arbitrary code execution by a remote attacker through `getServerUrlHash` | Not provided |
+| [CVE-2026-51996](https://www.cve.org/CVERecord?id=CVE-2026-51996) | Arbitrary code execution by a remote attacker through `getServerUrlHash` | **9.8 · Critical** |
 | [CVE-2026-51997](https://www.cve.org/CVERecord?id=CVE-2026-51997) | Arbitrary code execution by a remote attacker through `open()` | **8.8 · High** |
 | [CVE-2026-52001](https://www.cve.org/CVERecord?id=CVE-2026-52001) | Remote disclosure of sensitive information through the SSE `eventSourceInit` fetch wrapper | Not provided |
 
 Descriptions above are attributed to the published **MITRE CNA records**;
-scores are **CISA-ADP assessments**, also displayed by NVD. Some official impact
-descriptions exceed the independently demonstrated impact in the corrected
-research. The [v1.0.1 scope and correction record](https://github.com/playb0t/mcp-remote-oauth-security/blob/v1.0.1/CORRECTIONS.md)
-preserves those evidence limits.
+scores are **CISA-ADP assessments**, also displayed by NVD. I take both as the
+publishers' assessment of the findings. The [v1.0.1 scope and correction record](https://github.com/playb0t/mcp-remote-oauth-security/blob/v1.0.1/CORRECTIONS.md)
+states what the research itself demonstrated.
 
 <details>
 <summary><strong>Two additional coordinated IDs remain RESERVED</strong></summary>
@@ -74,7 +73,7 @@ scope, a disclosure timeline and remediation guidance. Its corrected evidence
 classes remain explicit: two localhost-canary reproductions, three bounded
 source reviews and two hardening/correction records.
 
-**Public citation:** [playb0t — mcp-remote OAuth Trust-Boundary Security Advisories](https://github.com/playb0t/mcp-remote-oauth-security/blob/v1.0.1/CITATION.cff).
+**Public citation:** [Alex Gercog (playb0t) · mcp-remote OAuth Trust-Boundary Security Advisories](https://github.com/playb0t/mcp-remote-oauth-security/blob/v1.0.2/CITATION.cff).
 
 ### Engineering contribution
 
