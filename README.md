@@ -85,6 +85,14 @@ commands when that check detects a mismatch.
 [PR #119](https://github.com/rtk-ai/rtk/pull/119) was merged; the
 [technical writeup](https://github.com/playb0t/rtk-hook-integrity) documents the work.
 
+### Writing
+
+- [The Server Named the URL, the Client Went: Five mcp-remote CVE Records](https://github.com/playb0t/mcp-remote-oauth-security/blob/main/docs/article-2026-09-30.md) · 30 September 2026
+- [The Signature Was Valid. The Moment Was Gone.](https://www.linkedin.com/pulse/signature-valid-moment-gone-alex-gercog-fhncc/) · 23 September 2026
+- [Who Authorized the Swarm?](https://www.linkedin.com/pulse/who-authorized-swarm-alex-gercog-gkmzc/) · 13 September 2026
+
+On X: [@playb_0t](https://x.com/playb_0t)
+
 ### Focus
 
 AI systems architecture · Agent coordination and orchestration · Runtime
