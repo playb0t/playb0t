@@ -1,0 +1,34 @@
+name: Refresh profile assets
+
+# Re-renders the board from the npm downloads API and the CVE Services API once a day, so the
+# day counter, the downloads and each record's state move without a hand. Commits only on change.
+
+on:
+  schedule:
+    - cron: "20 6 * * *"   # 06:20 UTC daily, after npm's daily aggregation lands
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Render assets from live npm data
+        run: python scripts/render_assets.py --live
+      - name: Commit if changed
+        run: |
+          git config user.name "playb0t-render"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/snapshot.json assets/board.svg
+          if git diff --cached --quiet; then
+            echo "no change"
+          else
+            git commit -m "render: refresh counters from npm, $(date -u +%Y-%m-%d)"
+            git push
+          fi
