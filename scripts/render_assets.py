@@ -126,8 +126,9 @@ def board_svg(snap: dict, total: int, last_day: str, days: int) -> str:
         ("17 FEB", f"FIX FOR {TESTED[0]}", "EXPECTED FROM THE MAINTAINER SINCE 17 FEB", "—", f"DELAYED {days}D", AMBER),
     ]
     arrivals = [
+        ("14 OCT", "SUPABASE #51646", "DEVIN PRESET TO NATIVE HTTP · MERGED", "—", "ARRIVED", GREEN),
+        ("14 OCT", "CALYPSO #115144", "A4A GUIDE: CURSOR, VS CODE OVER HTTP", "—", "ON APPROACH", AMBER),
         ("2026", "COORD-HUB", "AGENT COORDINATION · HUMAN APPROVAL", "—", "BOARDING", GREEN),
-        ("JUL", "RTK-AI/RTK #119", "SHA-256 HOOK INTEGRITY GATE · MERGED", "—", "ARRIVED", GREEN),
     ]
     sections = [("DEPARTURES", "BREAKER · records that left the research", departures),
                 ("ARRIVALS", "BUILDER · what landed", arrivals)]
@@ -137,7 +138,7 @@ def board_svg(snap: dict, total: int, last_day: str, days: int) -> str:
     arr_desc = "; ".join(f"{t} {r} {d} {s}" for t, r, d, c, s, _ in arrivals)
     desc = f"Alex Gercog, playb0t. Departures: {dep_desc}. Arrivals: {arr_desc}. {total:,} downloads since the private report; {days} days without a fix."
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="tb db" xml:space="preserve">',
-           '<title id="tb">Split-flap board: departures are the CVE records of the mcp-remote research and the open fix for the current release; arrivals are coord-hub and the merged rtk hook-integrity gate</title>',
+           '<title id="tb">Split-flap board: departures are the CVE records of the mcp-remote research and the open fix for the current release; arrivals are the merged Supabase pull request, the open wp-calypso pull request and coord-hub</title>',
            f'<desc id="db">{esc(desc)}</desc>',
            f'<rect width="{W}" height="{H}" rx="18" fill="#05070a"/>',
            f'<rect x="10" y="10" width="{W-20}" height="{H-20}" rx="14" fill="#0b0e13" stroke="#1d222b"/>',

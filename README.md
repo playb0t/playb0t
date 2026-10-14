@@ -1,21 +1,40 @@
 <p align="center">
-  <img src="assets/board.svg" width="100%" alt="Split-flap airport board. Departures, the breaker half: CVE-2026-51996 code execution, CISA 9.8; CVE-2026-51994 SSRF, 9.1; CVE-2026-51997 code execution, 8.8; CVE-2026-51995 information disclosure, 7.5; CVE-2026-52001 information disclosure, 7.5, all published 24 September 2026; CVE-2026-51998 and CVE-2026-51999 reserved for this request, not yet published; mcp-remote 0.14.3 still follows the reported path on 9 October, no fix; the fix expected since 17 February is delayed, days counted daily. Arrivals, the builder half: coord-hub, boarding; rtk-ai/rtk PR 119 SHA-256 hook integrity gate, arrived. Ticker: npm downloads since the private report, read daily; 58 of 58 stable releases carry the path; selected code under 12 other npm names and 8 other Git repositories; this page makes no requests to third-party servers.">
+  <img src="assets/board.svg" width="100%" alt="Split-flap airport board. Departures, the research half: CVE-2026-51996 code execution, CISA 9.8; CVE-2026-51994 SSRF, 9.1; CVE-2026-51997 code execution, 8.8; CVE-2026-51995 information disclosure, 7.5; CVE-2026-52001 information disclosure, 7.5, all published 24 September 2026; CVE-2026-51998 and CVE-2026-51999 reserved for this request, not yet published; mcp-remote 0.14.3 still follows the reported path on 9 October, no fix; the fix expected since 17 February is delayed, days counted daily. Arrivals, the engineering half: Supabase PR 51646, Devin preset moved to native HTTP, arrived 14 October; wp-calypso PR 115144, A4A guide for Cursor and VS Code over HTTP, on approach; coord-hub, boarding. Ticker: npm downloads since the private report, read daily; 58 of 58 stable releases carry the path; selected code under 12 other npm names and 8 other Git repositories; this page makes no requests to third-party servers.">
 </p>
 
-**AI systems engineer & security researcher.** I build coordination systems for AI agents and document trust-boundary failures in the infrastructure they run on. Both halves ask one question: **who decided that this request was allowed?**
+**AI systems engineer & security researcher.** I build and investigate the infrastructure that connects AI agents to tools and services: MCP integrations, OAuth interoperability and runtime trust boundaries. I trace a problem from the configuration and the authorization flow to the process that makes the request, then fix it upstream with regression tests. Both halves ask one question: **who decided that this request was allowed?**
 
-## Breaker
+## Upstream engineering
 
-[Research repository](https://github.com/playb0t/mcp-remote-oauth-security) · [Dossier, 9 October 2026](https://github.com/playb0t/mcp-remote-oauth-security/blob/main/docs/research-2026-10-09/RESEARCH_DOSSIER.md) · [Impact ledger](https://playb0t.com) · [Disclosure timeline](https://github.com/playb0t/mcp-remote-oauth-security/blob/main/TIMELINE.md)
+| Project | Status | Contribution |
+| --- | --- | --- |
+| [Supabase](https://github.com/supabase/supabase/pull/51646) | **Merged**, 14 October 2026 | Moved the Devin MCP preset from an unpinned `mcp-remote` bridge to native HTTP configuration, removed the dead bridge type, added shared setup instructions and brought Devin into the common client URL round-trip test. 4 files, +46/−38, 273 package tests. |
+| [Automattic / wp-calypso](https://github.com/Automattic/wp-calypso/pull/115144) | **Open PR** | Native HTTP installation links and manual configurations for Cursor and VS Code in the A4A MCP guide, with the bridge kept as the documented fallback. 2 files, +117/−14, 44 Jest tests. |
+| [rtk-ai/rtk](https://github.com/rtk-ai/rtk/pull/119) | **Merged** | SHA-256 integrity verification for installed agent hooks. Operational commands refuse to run when the hook differs from its recorded baseline. [Writeup and limitations](https://github.com/playb0t/rtk-hook-integrity). |
 
-- **Records:** [CVE-2026-51996](https://www.cve.org/CVERecord?id=CVE-2026-51996) · [CVE-2026-51994](https://www.cve.org/CVERecord?id=CVE-2026-51994) · [CVE-2026-51997](https://www.cve.org/CVERecord?id=CVE-2026-51997) · [CVE-2026-51995](https://www.cve.org/CVERecord?id=CVE-2026-51995) · [CVE-2026-52001](https://www.cve.org/CVERecord?id=CVE-2026-52001). The board shows the published MITRE CNA descriptions and the CISA-ADP CVSS 3.1 scores. The research's own evidence classes and limits are in the [scope and correction record](https://github.com/playb0t/mcp-remote-oauth-security/blob/v1.0.1/CORRECTIONS.md).
-- **Still open.** The current release, 0.14.3, was run in full against loopback canaries on 9 October 2026. It still follows the server-selected request path of CVE-2026-51994 and makes the authorization-server request of CVE-2026-51995, HTTP 302 redirect included. The discovery helpers execute in all 58 stable releases from 0.1.32 to 0.14.3. The official MCP SDKs fixed this class in September 2026 ([TypeScript](https://github.com/modelcontextprotocol/typescript-sdk/security/advisories/GHSA-6qxp-vccf-f47h), [Python](https://github.com/modelcontextprotocol/python-sdk/security/advisories/GHSA-qx49-fqc8-xw99)). mcp-remote 0.14.3 still bundles `@modelcontextprotocol/client` 2.0.0, inside the affected range.
-- **Method:** localhost-only canaries, integrity-checked archives, recorded procedures, no weaponized code. Severity is left to the CNA and CISA and reported as published. [agent-audit-kit v0.6.18](https://github.com/sattyamjjain/agent-audit-kit/releases/tag/v0.6.18) picked the records up within eight hours of the issue. [UltraRAG](https://github.com/OpenBMB/UltraRAG/pull/538) fixed the remote-MCP launch reported in issue #537 within 27 hours and credited the report; the records notice on that now-live path is [#541](https://github.com/OpenBMB/UltraRAG/issues/541). [Supabase](https://github.com/supabase/supabase/pull/51646) merged the pull request that moved its Devin preset off the bridge to the client's native HTTP path within seven hours of opening, after the reviewer ran the hosted flow himself.
+Verification behind the table. Supabase: Devin CLI 3000.11.3 and portable Devin Desktop 3.10.48 against a local OAuth fixture, then the hosted OAuth flow completed by the upstream reviewer. Automattic: Cursor 3.24.18 and VS Code 1.141.1 through the installation link, manual configuration, OAuth with PKCE, tool discovery and saved-token reuse, with no bridge process in the tree.
 
-## Builder
+Earlier steps on the same line: [UltraRAG #538](https://github.com/OpenBMB/UltraRAG/pull/538) fixed the remote-MCP launch I reported within 27 hours and credited the report; [Appwrite #14465](https://github.com/appwrite/appwrite/issues/14465) is open, with the patch ready on the maintainers' word.
 
-- **coord-hub**, a local coordination layer for AI agents operated by different people: explicit task state, scoped delegation, human approval, verifiable records of execution. Active engineering work.
-- **[rtk-ai/rtk, SHA-256 hook integrity](https://github.com/rtk-ai/rtk/pull/119)**: an installed coding-agent hook is checked against its recorded hash. Operational commands are refused on a mismatch. Merged. [Technical writeup](https://github.com/playb0t/rtk-hook-integrity).
+## How I work
+
+- **Client interoperability:** setup, authentication, tool discovery and reconnect behaviour tested on versioned client binaries.
+- **Runtime verification:** HTTP requests correlated with process IDs and process trees, so the record says which component made the request.
+- **Reproducible fixes:** source versions, traces, negative controls and regression tests preserved. Local-fixture results are kept apart from live-service validation.
+
+## Security research
+
+Five published CVE records reference my research into `mcp-remote`. All five carry CISA-ADP assessments, with scores up to **9.8 Critical**: [CVE-2026-51994](https://www.cve.org/CVERecord?id=CVE-2026-51994) · [CVE-2026-51995](https://www.cve.org/CVERecord?id=CVE-2026-51995) · [CVE-2026-51996](https://www.cve.org/CVERecord?id=CVE-2026-51996) · [CVE-2026-51997](https://www.cve.org/CVERecord?id=CVE-2026-51997) · [CVE-2026-52001](https://www.cve.org/CVERecord?id=CVE-2026-52001).
+
+The research examines how remote metadata influences request destinations, browser launches and credential handling. The advisories separate local reproductions, source review and hardening findings, with version-specific scope and limitations.
+
+**Still open.** The current release, 0.14.3, was run in full against loopback canaries on 9 October 2026. It still follows the server-selected request path of CVE-2026-51994 and makes the authorization-server request of CVE-2026-51995, HTTP 302 redirect included. No fix has been stated since the private report of 17 February 2026. The official MCP SDKs closed this class in September 2026 ([TypeScript](https://github.com/modelcontextprotocol/typescript-sdk/security/advisories/GHSA-6qxp-vccf-f47h), [Python](https://github.com/modelcontextprotocol/python-sdk/security/advisories/GHSA-qx49-fqc8-xw99)); mcp-remote 0.14.3 still bundles `@modelcontextprotocol/client` 2.0.0, inside the affected range.
+
+[Research and advisories](https://github.com/playb0t/mcp-remote-oauth-security) · [Reproduction dossier](https://github.com/playb0t/mcp-remote-oauth-security/blob/main/docs/research-2026-10-09/RESEARCH_DOSSIER.md) · [Scope and corrections](https://github.com/playb0t/mcp-remote-oauth-security/blob/main/CORRECTIONS.md) · [Disclosure timeline](https://github.com/playb0t/mcp-remote-oauth-security/blob/main/TIMELINE.md) · [Impact ledger](https://playb0t.com)
+
+## Building: coord-hub
+
+A local coordination layer for existing AI agents operated by different people: explicit task state, scoped delegation, human approval and verifiable execution records. It carries the same question into multi-agent systems: who can authorize an agent's next action? Active engineering work.
 
 ## Writing
 
