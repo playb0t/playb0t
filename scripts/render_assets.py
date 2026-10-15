@@ -17,7 +17,8 @@ ROOT = Path(__file__).resolve().parent.parent
 ASSETS, DATA = ROOT / "assets", ROOT / "data"
 PACKAGE = "mcp-remote"
 REPORT_DAY = dt.date(2026, 2, 17)           # private report to the maintainer (TIMELINE.md)
-TESTED = ("0.14.3", "9 OCT")                # the release run in full against loopback canaries, and when
+TESTED = ("0.15.1", "15 OCT")               # the release run in full against loopback canaries, and when
+PATH_RELEASES = ("62 OF 62", "0.1.32")      # stable releases that carry the discovery path (58 in the 9 Oct dossier + 0.14.4 to 0.15.1 on 15 Oct), and the first
 RECORDS = [  # id, board description (the CNA text, shortened); reserved ids carry no description until they publish
     ("CVE-2026-51996", "CODE EXECUTION · getServerUrlHash"),
     ("CVE-2026-51994", "SSRF · resource_metadata URL"),
@@ -121,8 +122,10 @@ def board_svg(snap: dict, total: int, last_day: str, days: int) -> str:
     published.sort(key=lambda p: -p[4])
     departures = [(day_month(p) if p else "—", cid, d, sc, "PUBLISHED", WHITE) for p, cid, d, sc, _ in published]
     departures += [("—", cid, "RESERVED FOR THIS REQUEST · UNPUBLISHED", "—", "RESERVED", DIM) for cid in reserved]
+    # The path line claims only what was run: when npm's latest is newer than the tested release, say which one was tested.
+    path_line = f"STILL FOLLOWS THE REPORTED PATH · {TESTED[1]}" if ver == TESTED[0] else f"LAST TESTED {TESTED[0]} · {TESTED[1]} · STILL FOLLOWS THE PATH"
     departures += [
-        (day_month(snap["latest_published"]), f"MCP-REMOTE {ver}", f"STILL FOLLOWS THE REPORTED PATH · {TESTED[1]}", "—", "NO FIX", AMBER),
+        (day_month(snap["latest_published"]), f"MCP-REMOTE {ver}", path_line, "—", "NO FIX", AMBER),
         ("17 FEB", f"FIX FOR {TESTED[0]}", "EXPECTED FROM THE MAINTAINER SINCE 17 FEB", "—", f"DELAYED {days}D", AMBER),
     ]
     arrivals = [
@@ -190,7 +193,7 @@ def board_svg(snap: dict, total: int, last_day: str, days: int) -> str:
             t_row += 0.18
         y += 60
     ty = H - 40
-    ticker = (f"{total:,} NPM DOWNLOADS SINCE THE PRIVATE REPORT OF 17 FEB 2026   ·   58 OF 58 STABLE RELEASES CARRY THE PATH, 0.1.32 TO {TESTED[0]}   ·   "
+    ticker = (f"{total:,} NPM DOWNLOADS SINCE THE PRIVATE REPORT OF 17 FEB 2026   ·   {PATH_RELEASES[0]} STABLE RELEASES CARRY THE PATH, {PATH_RELEASES[1]} TO {TESTED[0]}   ·   "
               f"SELECTED CODE AND NAMESPACE SIGNATURES UNDER 12 OTHER NPM NAMES AND IN 8 OTHER GIT REPOSITORIES   ·   THE MCP SDKS FIXED THIS CLASS IN SEPTEMBER, THE BRIDGE DID NOT   ·   "
               f"THIS PAGE MAKES 0 REQUESTS TO THIRD-PARTY SERVERS   ·   DATA READ {snap['read_at_utc'][:10]} FROM API.NPMJS.ORG AND CVEAWG.MITRE.ORG, RE-RENDERED DAILY   ·   ")
     out.append(f'<clipPath id="tk"><rect x="{x_start}" y="{ty-20}" width="{W-120}" height="30"/></clipPath>')
@@ -209,7 +212,8 @@ def main() -> None:
     daily = snap["daily"]
     total = sum(d["downloads"] for d in daily)
     last_day = daily[-1]["day"]
-    days = (dt.date.fromisoformat(last_day) - REPORT_DAY).days
+    # Days are counted to the day the snapshot was read, not to npm's last aggregated day (which lags by two or three days).
+    days = (dt.date.fromisoformat(snap["read_at_utc"][:10]) - REPORT_DAY).days
     ASSETS.mkdir(exist_ok=True)
     (ASSETS / "board.svg").write_bytes(board_svg(snap, total, last_day, days).encode())
     print(json.dumps({"total": total, "last_day": last_day, "days": days, "latest": snap["latest_version"],
