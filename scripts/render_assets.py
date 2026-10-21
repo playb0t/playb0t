@@ -133,6 +133,8 @@ def board_svg(snap: dict, total: int, last_day: str, days: int) -> str:
         ("19 OCT", "DASHBOARD-ICONS", "#2954 MCP SETUP TO NATIVE HTTP · MERGED", "—", "ARRIVED", GREEN),
         ("20 OCT", "DASHBOARD-ICONS", "#2991 OAUTH CHALLENGE, BATCHES · MERGED", "—", "ARRIVED", GREEN),
         ("20 OCT", "ALIYUN IAC-CODE", "#390 DOCS EXAMPLE WITHOUT BRIDGE · MERGED", "—", "ARRIVED", GREEN),
+        ("21 OCT", "QUARKUS AGENT-MCP", "#295 SKILL WRITES KEPT IN BOUNDS · MERGED", "—", "ARRIVED", GREEN),
+        ("21 OCT", "QUARKUS", "#57563 DEV UI ZED TO NATIVE HTTP · MERGED", "—", "ARRIVED", GREEN),
         ("2026", "COORD-HUB", "AGENT COORDINATION · HUMAN APPROVAL", "—", "BOARDING", GREEN),
     ]
     sections = [("DEPARTURES", "BREAKER · records that left the research", departures),
@@ -143,7 +145,7 @@ def board_svg(snap: dict, total: int, last_day: str, days: int) -> str:
     arr_desc = "; ".join(f"{t} {r} {d} {s}" for t, r, d, c, s, _ in arrivals)
     desc = f"Alex Gercog, playb0t. Departures: {dep_desc}. Arrivals: {arr_desc}. {total:,} downloads since the private report; {days} days without a fix."
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="tb db" xml:space="preserve">',
-           '<title id="tb">Split-flap board: departures are the CVE records of the mcp-remote research and the open fix for the current release; arrivals are the merged pull requests in Supabase, dashboard-icons and Alibaba Cloud iac-code, and coord-hub</title>',
+           '<title id="tb">Split-flap board: departures are the CVE records of the mcp-remote research and the open fix for the current release; arrivals are the merged pull requests in Supabase, dashboard-icons, Alibaba Cloud iac-code and Quarkus, and coord-hub</title>',
            f'<desc id="db">{esc(desc)}</desc>',
            f'<rect width="{W}" height="{H}" rx="18" fill="#05070a"/>',
            f'<rect x="10" y="10" width="{W-20}" height="{H-20}" rx="14" fill="#0b0e13" stroke="#1d222b"/>',
