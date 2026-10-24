@@ -1,5 +1,5 @@
 {
- "read_at_utc": "2026-10-23T11:48:12+00:00",
+ "read_at_utc": "2026-10-24T11:13:43+00:00",
  "package": "mcp-remote",
  "daily": [
   {
@@ -977,6 +977,22 @@
   {
    "downloads": 78360,
    "day": "2026-10-18"
+  },
+  {
+   "downloads": 0,
+   "day": "2026-10-19"
+  },
+  {
+   "downloads": 0,
+   "day": "2026-10-20"
+  },
+  {
+   "downloads": 0,
+   "day": "2026-10-21"
+  },
+  {
+   "downloads": 209237,
+   "day": "2026-10-22"
   }
  ],
  "latest_version": "0.15.2",
