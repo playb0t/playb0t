@@ -1,4 +1,15 @@
 <p align="center">
+  <img src="assets/banner-playb0t.png" width="100%" alt="playb0t: the name in teal block letters on a dark starfield, the zero drawn as an alien head, above a glowing planet horizon.">
+</p>
+
+<p align="center">
+  <a href="https://github.com/playb0t/mcp-remote-oauth-security"><img src="assets/btn-research.svg" width="24%" alt="Research: five CVE records"></a>
+  <a href="https://github.com/playb0t/mcp-host-matrix"><img src="assets/btn-matrix.svg" width="24%" alt="Matrix: host measurements"></a>
+  <a href="https://playb0t.com"><img src="assets/btn-impact.svg" width="24%" alt="Impact: playb0t.com ledger"></a>
+  <a href="#writing"><img src="assets/btn-writing.svg" width="24%" alt="Writing: articles"></a>
+</p>
+
+<p align="center">
   <img src="assets/board.svg" width="100%" alt="Split-flap airport board. Departures, the research half: CVE-2026-51996 code execution, CISA 9.8; CVE-2026-51994 SSRF, 9.1; CVE-2026-51997 code execution, 8.8; CVE-2026-51995 information disclosure, 7.5; CVE-2026-52001 information disclosure, 7.5, all published 24 September 2026; CVE-2026-51998 and CVE-2026-51999 reserved for this request, not yet published; mcp-remote 0.15.1 still follows the reported path on 15 October, no fix; the fix expected since 17 February is delayed, days counted daily. Arrivals, the engineering half: Supabase PR 51646, Devin preset moved to native HTTP, arrived 14 October; dashboard-icons PR 2954, MCP setup dialog moved to native HTTP, arrived 19 October; dashboard-icons PR 2991, OAuth challenge for legacy batches, arrived 20 October; Alibaba Cloud iac-code PR 390, docs example without the bridge, arrived 20 October; Quarkus agent-mcp PR 295, skill writes kept inside the skills directory, arrived 21 October; Quarkus PR 57563, Dev UI Zed panel to native HTTP, arrived 21 October; coord-hub, boarding. Ticker: npm downloads since the private report, read daily; 62 of 62 stable releases carry the path; selected code under 12 other npm names and 8 other Git repositories; this page makes no requests to third-party servers.">
 </p>
 
@@ -6,8 +17,18 @@
 
 ## Upstream engineering
 
+<p align="center">
+  <a href="https://github.com/NVIDIA/NeMo-Agent-Toolkit/pull/2497"><img src="assets/card-nvidia.svg" width="49%" alt="NVIDIA NeMo Agent Toolkit #2497, merged 30 October 2026: validate the token resource when no audience is configured."></a>
+  <a href="https://github.com/microsoft/vscode-docs/pull/10542"><img src="assets/card-vscode.svg" width="49%" alt="microsoft/vscode-docs #10542, merged 29 October 2026: how to set an OAuth client secret."></a>
+  <a href="https://github.com/supabase/supabase/pull/51646"><img src="assets/card-supabase.svg" width="49%" alt="supabase/supabase #51646, merged 14 October 2026: Devin MCP preset to native HTTP."></a>
+  <a href="https://github.com/quarkusio/quarkus/pull/57563"><img src="assets/card-quarkus.svg" width="49%" alt="quarkusio/quarkus #57563, merged 21 October 2026: Dev UI Zed panel to native HTTP."></a>
+</p>
+
 | Project | Status | Contribution |
 | --- | --- | --- |
+| [NVIDIA / NeMo Agent Toolkit](https://github.com/NVIDIA/NeMo-Agent-Toolkit/pull/2497) | **Merged**, 30 October 2026 | Validates the token resource when no audience is configured, as agreed with the maintainer in issue #2484 first. 9 files, +250/−10, all six CI configurations green; approved by the maintainer and the dependency owner. |
+| [Microsoft / vscode-docs](https://github.com/microsoft/vscode-docs/pull/10542) | **Merged**, 29 October 2026 | Documented how to set an OAuth client secret for an MCP server: the secret is not part of `mcp.json`, VS Code keeps it in its secret storage. 1 file, +3. |
+| [Tencent / WeKnora](https://github.com/Tencent/WeKnora/pull/4363) | **Merged**, 26 October 2026 | Added VS Code setup to the MCP guide and pinned the stdio fallback. 11 files, +98/−32. |
 | [Supabase](https://github.com/supabase/supabase/pull/51646) | **Merged**, 14 October 2026 | Moved the Devin MCP preset from an unpinned `mcp-remote` bridge to native HTTP configuration, removed the dead bridge type, added shared setup instructions and brought Devin into the common client URL round-trip test. 4 files, +46/−38, 273 package tests. |
 | [homarr-labs / dashboard-icons](https://github.com/homarr-labs/dashboard-icons/pull/2954) | **Merged**, 19 October 2026 | Moved the MCP setup dialog's VS Code, Claude Code, Claude Desktop, Windsurf and Zed tabs from an unpinned `mcp-remote` bridge to native HTTP connections; the custom-client tab keeps the bridge, pinned to 0.15.1. 5 files, +119/−30, 12 Chromium dialog tests. The maintainer checked every tab and merged with a fix of his own on top. |
 | [homarr-labs / dashboard-icons](https://github.com/homarr-labs/dashboard-icons/pull/2991) | **Merged**, 20 October 2026 | Found while preparing the change above: the MCP route skipped the OAuth sign-in challenge and the per-call rate limit for legacy JSON-RPC batches. The fix reads every `tools/call` in a batch, challenges before dispatch and sizes the body limit by request class. 3 files, +482/−9, 1,572 tests. |
@@ -46,6 +67,10 @@ A local coordination layer for existing AI agents operated by different people: 
 
 ## Writing
 
+- [The Red Pill for Artificial Intelligence: Welcome to the MCP Matrix](https://www.linkedin.com/pulse/red-pill-artificial-intelligence-welcome-mcp-matrix-alex-gercog-wuehc/) · 28 October 2026
+- [The Future Has No Lawyer. That's Why It's So Convenient to Represent It](https://www.linkedin.com/pulse/future-has-lawyer-thats-why-its-so-convenient-represent-alex-gercog-xdsec/) · 23 October 2026
+- [The "Stateless" Illusion, or Why 405 Method Not Allowed Doesn't Kill the Ghosts in the Machine](https://www.linkedin.com/pulse/stateless-illusion-why-405-method-allowed-doesnt-kill-alex-gercog-7nclc/) · 21 October 2026
+- [Straw Airplanes and the End of the World](https://www.linkedin.com/pulse/straw-airplanes-end-world-how-tech-industry-built-21st-alex-gercog-w5xqc/) · 13 October 2026
 - [Five mcp-remote CVE records, five CISA scores, no stated fix](https://www.linkedin.com/pulse/five-mcp-remote-cve-records-cisa-scores-stated-fix-alex-gercog-gbrfc/) · 8 October 2026, second edition
 - [The Signature Was Valid. The Moment Was Gone.](https://www.linkedin.com/pulse/signature-valid-moment-gone-alex-gercog-fhncc/) · 23 September 2026
 - [Who Authorized the Swarm?](https://www.linkedin.com/pulse/who-authorized-swarm-alex-gercog-gkmzc/) · 13 September 2026

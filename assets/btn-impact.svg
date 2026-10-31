@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="104" viewBox="0 0 340 104" role="img" aria-label="IMPACT: playb0t.com ledger">
+<defs><filter id="gimpact" x="-20%" y="-40%" width="140%" height="180%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><linearGradient id="simpact" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#062a2f"/><stop offset="1" stop-color="#04191c"/></linearGradient></defs>
+<path d="M8 4 H314 L336 26 V96 H85 L71 100 H8 Z" fill="url(#simpact)" stroke="#01fafa" stroke-width="2.5" filter="url(#gimpact)"/>
+<text x="28" y="62" font-family="'Arial Black', 'Segoe UI Black', Arial, sans-serif" font-size="34" font-weight="900" font-style="italic" fill="#fd0000" opacity="0.85">IMPACT</text><text x="32" y="62" font-family="'Arial Black', 'Segoe UI Black', Arial, sans-serif" font-size="34" font-weight="900" font-style="italic" fill="#01fafa" opacity="0.85">IMPACT</text><text x="30" y="62" font-family="'Arial Black', 'Segoe UI Black', Arial, sans-serif" font-size="34" font-weight="900" font-style="italic" fill="#e6fbfd">IMPACT</text>
+<text x="31" y="86" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="13" fill="#7fb5bd" letter-spacing="2">PLAYB0T.COM LEDGER</text>
+<circle cx="306" cy="80" r="5" fill="#01fafa" filter="url(#gimpact)"/>
+</svg>

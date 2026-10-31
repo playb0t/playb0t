@@ -102,8 +102,8 @@ def board_svg(snap: dict, total: int, last_day: str, days: int) -> str:
     """An airport split-flap board. DEPARTURES is the breaker half (the records that left), ARRIVALS the builder
     half (what landed). Flipping cells cycle through letters before settling; without SMIL the final text shows."""
     rnd = random.Random(7)
-    FLAP, FLAP_EDGE, SPLIT = "#171a1f", "#2a2f37", "#0a0c10"
-    WHITE, AMBER, GREEN, DIM, HEAD, DESC = "#f2f2ec", "#ffb000", "#39d353", "#6b7280", "#9aa3b2", "#c9d1d9"
+    FLAP, FLAP_EDGE, SPLIT = "#04191c", "#0a3a40", "#010708"
+    WHITE, AMBER, GREEN, DIM, HEAD, DESC = "#e6fbfd", "#ff2a36", "#01fafa", "#4f7f86", "#7fb5bd", "#bfe3e8"
     CW, CH, GAP, ROW = 15.0, 25.0, 1.5, 33.0           # cell width/height, gap between cells, row pitch
     COLS = [("TIME", 6), ("RECORD", 17), ("DESCRIPTION", 41), ("CISA", 4), ("STATUS", 14)]
     FLIP_COLS = {"RECORD", "STATUS"}
@@ -135,6 +135,9 @@ def board_svg(snap: dict, total: int, last_day: str, days: int) -> str:
         ("20 OCT", "ALIYUN IAC-CODE", "#390 DOCS EXAMPLE WITHOUT BRIDGE · MERGED", "—", "ARRIVED", GREEN),
         ("21 OCT", "QUARKUS AGENT-MCP", "#295 SKILL WRITES KEPT IN BOUNDS · MERGED", "—", "ARRIVED", GREEN),
         ("21 OCT", "QUARKUS", "#57563 DEV UI ZED TO NATIVE HTTP · MERGED", "—", "ARRIVED", GREEN),
+        ("26 OCT", "TENCENT WEKNORA", "#4363 VS CODE SETUP · PINNED FALLBACK", "—", "ARRIVED", GREEN),
+        ("29 OCT", "VS CODE DOCS", "#10542 OAUTH CLIENT SECRET · MERGED", "—", "ARRIVED", GREEN),
+        ("30 OCT", "NVIDIA NEMO AGENT", "#2497 TOKEN RESOURCE CHECK · MERGED", "—", "ARRIVED", GREEN),
         ("2026", "COORD-HUB", "AGENT COORDINATION · HUMAN APPROVAL", "—", "BOARDING", GREEN),
     ]
     sections = [("DEPARTURES", "BREAKER · records that left the research", departures),
@@ -145,17 +148,17 @@ def board_svg(snap: dict, total: int, last_day: str, days: int) -> str:
     arr_desc = "; ".join(f"{t} {r} {d} {s}" for t, r, d, c, s, _ in arrivals)
     desc = f"Alex Gercog, playb0t. Departures: {dep_desc}. Arrivals: {arr_desc}. {total:,} downloads since the private report; {days} days without a fix."
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="tb db" xml:space="preserve">',
-           '<title id="tb">Split-flap board: departures are the CVE records of the mcp-remote research and the open fix for the current release; arrivals are the merged pull requests in Supabase, dashboard-icons, Alibaba Cloud iac-code and Quarkus, and coord-hub</title>',
+           '<title id="tb">Split-flap board: departures are the CVE records of the mcp-remote research and the open fix for the current release; arrivals are the merged pull requests in Supabase, dashboard-icons, Alibaba Cloud iac-code, Quarkus, Tencent WeKnora, VS Code docs and NVIDIA NeMo Agent Toolkit, and coord-hub</title>',
            f'<desc id="db">{esc(desc)}</desc>',
-           f'<rect width="{W}" height="{H}" rx="18" fill="#05070a"/>',
-           f'<rect x="10" y="10" width="{W-20}" height="{H-20}" rx="14" fill="#0b0e13" stroke="#1d222b"/>',
+           f'<rect width="{W}" height="{H}" rx="18" fill="#010607"/>',
+           f'<rect x="10" y="10" width="{W-20}" height="{H-20}" rx="14" fill="#031417" stroke="#0b3a40"/>',
            f'<g font-family="{MONO}">']
     out.append(f'<text x="{x_start}" y="64" font-size="30" font-weight="700" fill="{WHITE}" letter-spacing="4">ALEX GERCOG</text>')
     out.append(f'<text x="{x_start+262}" y="64" font-size="18" fill="{HEAD}" letter-spacing="3">PLAYB0T · AI SYSTEMS ENGINEER · SECURITY RESEARCHER</text>')
     out.append(f'<text x="{W-60}" y="56" font-size="13" fill="{HEAD}" text-anchor="end" letter-spacing="2">DAYS WITHOUT A FIX</text>')
     out.append(f'<text x="{W-60}" y="92" font-size="36" font-weight="700" fill="{AMBER}" text-anchor="end">{days}</text>')
     out.append(f'<text x="{x_start}" y="96" font-size="15" fill="{HEAD}">who decided that this request was allowed?</text>')
-    out.append(f'<line x1="{x_start}" y1="116" x2="{W-60}" y2="116" stroke="#1d222b"/>')
+    out.append(f'<line x1="{x_start}" y1="116" x2="{W-60}" y2="116" stroke="#0b3a40"/>')
 
     def cell(x, y, ch, colour, t0=None, flips=0):
         """One flap. With t0 set, the cell cycles through `flips` random letters from t0 before showing ch."""
@@ -201,9 +204,9 @@ def board_svg(snap: dict, total: int, last_day: str, days: int) -> str:
               f"SELECTED CODE AND NAMESPACE SIGNATURES UNDER 12 OTHER NPM NAMES AND IN 8 OTHER GIT REPOSITORIES   ·   THE MCP SDKS FIXED THIS CLASS IN SEPTEMBER, THE BRIDGE DID NOT   ·   "
               f"THIS PAGE MAKES 0 REQUESTS TO THIRD-PARTY SERVERS   ·   DATA READ {snap['read_at_utc'][:10]} FROM API.NPMJS.ORG AND CVEAWG.MITRE.ORG, RE-RENDERED DAILY   ·   ")
     out.append(f'<clipPath id="tk"><rect x="{x_start}" y="{ty-20}" width="{W-120}" height="30"/></clipPath>')
-    out.append(f'<rect x="{x_start}" y="{ty-20}" width="{W-120}" height="30" fill="#0f1217" rx="4"/>')
+    out.append(f'<rect x="{x_start}" y="{ty-20}" width="{W-120}" height="30" fill="#04191c" rx="4"/>')
     tw = len(ticker) * 9.0
-    out.append(f'<g clip-path="url(#tk)"><text x="{x_start+10}" y="{ty}" font-size="15" fill="{AMBER}" letter-spacing="1"><animate attributeName="x" from="{x_start+10}" to="{x_start+10-tw:.0f}" dur="{tw/55:.0f}s" repeatCount="indefinite"/>{esc(ticker)}{esc(ticker)}</text></g>')
+    out.append(f'<g clip-path="url(#tk)"><text x="{x_start+10}" y="{ty}" font-size="15" fill="{GREEN}" letter-spacing="1"><animate attributeName="x" from="{x_start+10}" to="{x_start+10-tw:.0f}" dur="{tw/55:.0f}s" repeatCount="indefinite"/>{esc(ticker)}{esc(ticker)}</text></g>')
     out.append("</g></svg>")
     return "\n".join(out)
 
