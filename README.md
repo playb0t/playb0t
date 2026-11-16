@@ -13,7 +13,7 @@
   <img src="assets/board.svg" width="100%" alt="Split-flap airport board. Departures, the research half: CVE-2026-51996 code execution, CISA 9.8; CVE-2026-51994 SSRF, 9.1; CVE-2026-51997 code execution, 8.8; CVE-2026-51995 information disclosure, 7.5; CVE-2026-52001 information disclosure, 7.5, all published 24 September 2026; CVE-2026-51998 and CVE-2026-51999 reserved for this request, not yet published; mcp-remote 0.15.1 still follows the reported path on 15 October, no fix; the fix expected since 17 February is delayed, days counted daily. Arrivals, the engineering half: Supabase PR 51646, Devin preset moved to native HTTP, arrived 14 October; dashboard-icons PR 2954, MCP setup dialog moved to native HTTP, arrived 19 October; dashboard-icons PR 2991, OAuth challenge for legacy batches, arrived 20 October; Alibaba Cloud iac-code PR 390, docs example without the bridge, arrived 20 October; Quarkus agent-mcp PR 295, skill writes kept inside the skills directory, arrived 21 October; Quarkus PR 57563, Dev UI Zed panel to native HTTP, arrived 21 October; coord-hub, boarding. Ticker: npm downloads since the private report, read daily; 62 of 62 stable releases carry the path; selected code under 12 other npm names and 8 other Git repositories; this page makes no requests to third-party servers.">
 </p>
 
-**AI systems engineer & security researcher.** I build and investigate the infrastructure that connects AI agents to tools and services: MCP integrations, OAuth interoperability and runtime trust boundaries. I trace a problem from the configuration and the authorization flow to the process that makes the request, then fix it upstream with regression tests. Both halves ask one question: **who decided that this request was allowed?**
+**Co-Founder & CTO, [AI TRIMIND](https://aitrimind.com). AI systems engineer & security researcher.** I find and fix defects in how AI agents connect to the systems they act on: MCP integrations, OAuth interoperability and runtime trust boundaries. Five published CVE records, scored by CISA up to **9.8 Critical**. Fixes merged at NVIDIA, Microsoft, IBM/Red Hat (Quarkus), Siemens, Alibaba Cloud, Tencent, Supabase and Materialize. I trace a problem from the configuration and the authorization flow to the process that makes the request, then fix it upstream with regression tests. Both halves ask one question: **who decided that this request was allowed?**
 
 ## Upstream engineering
 
@@ -69,6 +69,10 @@ A local coordination layer for existing AI agents operated by different people: 
 
 ## Writing
 
+- [Maritime Salvage Law and Quiet Looting: What Happens When a Corporation Steals Your Blueprint Through an Open Window](https://www.linkedin.com/pulse/maritime-salvage-law-quiet-looting-what-happens-when-steals-gercog-1s3sc/) · November 2026
+- [The Man Who Removed the Prism](https://www.linkedin.com/pulse/man-who-removed-prism-alex-gercog-ktb5c/) · November 2026
+- [The Phone Booth in the Mojave Desert](https://www.linkedin.com/pulse/phone-booth-mojave-desert-age-ai-its-easier-fix-breakdown-alex-gercog-30cdc/) · November 2026
+- [Nobody Calls Pan Am: The AI Industry's Self-Printed Badge Problem](https://www.linkedin.com/pulse/nobody-calls-pan-am-ai-industrys-self-printed-badge-problem-gercog-vmhxc/) · November 2026
 - [The Red Pill for Artificial Intelligence: Welcome to the MCP Matrix](https://www.linkedin.com/pulse/red-pill-artificial-intelligence-welcome-mcp-matrix-alex-gercog-wuehc/) · 28 October 2026
 - [The Future Has No Lawyer. That's Why It's So Convenient to Represent It](https://www.linkedin.com/pulse/future-has-lawyer-thats-why-its-so-convenient-represent-alex-gercog-xdsec/) · 23 October 2026
 - [The "Stateless" Illusion, or Why 405 Method Not Allowed Doesn't Kill the Ghosts in the Machine](https://www.linkedin.com/pulse/stateless-illusion-why-405-method-allowed-doesnt-kill-alex-gercog-7nclc/) · 21 October 2026
