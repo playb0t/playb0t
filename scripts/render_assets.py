@@ -140,6 +140,7 @@ def board_svg(snap: dict, total: int, last_day: str, days: int) -> str:
         ("30 OCT", "NVIDIA NEMO AGENT", "#2497 TOKEN RESOURCE CHECK · MERGED", "—", "ARRIVED", GREEN),
         ("6 NOV", "MATERIALIZE", "#40522 CATALOG QUERY VALIDATION · MERGED", "—", "ARRIVED", GREEN),
         ("9 NOV", "SIEMENS WINCC OA", "#38 PINNED BRIDGE EXAMPLES · MERGED", "—", "ARRIVED", GREEN),
+        ("16 NOV", "GITHUB DOCS", "#46358 ATLASSIAN MCP OVER HTTP · MERGED", "—", "ARRIVED", GREEN),
         ("2026", "COORD-HUB", "AGENT COORDINATION · HUMAN APPROVAL", "—", "BOARDING", GREEN),
     ]
     sections = [("DEPARTURES", "BREAKER · records that left the research", departures),
@@ -150,7 +151,7 @@ def board_svg(snap: dict, total: int, last_day: str, days: int) -> str:
     arr_desc = "; ".join(f"{t} {r} {d} {s}" for t, r, d, c, s, _ in arrivals)
     desc = f"Alex Gercog, playb0t. Departures: {dep_desc}. Arrivals: {arr_desc}. {total:,} downloads since the private report; {days} days without a fix."
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="tb db" xml:space="preserve">',
-           '<title id="tb">Split-flap board: departures are the CVE records of the mcp-remote research and the open fix for the current release; arrivals are the merged pull requests in Supabase, dashboard-icons, Alibaba Cloud iac-code, Quarkus, Tencent WeKnora, VS Code docs, NVIDIA NeMo Agent Toolkit, Materialize and Siemens WinCC OA, and coord-hub</title>',
+           '<title id="tb">Split-flap board: departures are the CVE records of the mcp-remote research and the open fix for the current release; arrivals are the merged pull requests in Supabase, dashboard-icons, Alibaba Cloud iac-code, Quarkus, Tencent WeKnora, VS Code docs, NVIDIA NeMo Agent Toolkit, Materialize, Siemens WinCC OA and GitHub docs, and coord-hub</title>',
            f'<desc id="db">{esc(desc)}</desc>',
            f'<rect width="{W}" height="{H}" rx="18" fill="#010607"/>',
            f'<rect x="10" y="10" width="{W-20}" height="{H-20}" rx="14" fill="#031417" stroke="#0b3a40"/>',
