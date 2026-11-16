@@ -17,8 +17,8 @@ ROOT = Path(__file__).resolve().parent.parent
 ASSETS, DATA = ROOT / "assets", ROOT / "data"
 PACKAGE = "mcp-remote"
 REPORT_DAY = dt.date(2026, 2, 17)           # private report to the maintainer (TIMELINE.md)
-TESTED = ("0.15.1", "15 OCT")               # the release run in full against loopback canaries, and when
-PATH_RELEASES = ("62 OF 62", "0.1.32")      # stable releases that carry the discovery path (58 in the 9 Oct dossier + 0.14.4 to 0.15.1 on 15 Oct), and the first
+TESTED = ("0.16.6", "14 NOV")               # the latest release run against loopback fixtures, and when (docs/research-2026-11-14 in the research repository)
+PATH_RELEASES = ("62 OF 62", "0.1.32", "0.15.1")  # stable releases that carry the discovery path (58 in the 9 Oct dossier + 0.14.4 to 0.15.1 on 15 Oct), the first and the last of that count
 RECORDS = [  # id, board description (the CNA text, shortened); reserved ids carry no description until they publish
     ("CVE-2026-51996", "CODE EXECUTION · getServerUrlHash"),
     ("CVE-2026-51994", "SSRF · resource_metadata URL"),
@@ -138,6 +138,8 @@ def board_svg(snap: dict, total: int, last_day: str, days: int) -> str:
         ("26 OCT", "TENCENT WEKNORA", "#4363 VS CODE SETUP · PINNED FALLBACK", "—", "ARRIVED", GREEN),
         ("29 OCT", "VS CODE DOCS", "#10542 OAUTH CLIENT SECRET · MERGED", "—", "ARRIVED", GREEN),
         ("30 OCT", "NVIDIA NEMO AGENT", "#2497 TOKEN RESOURCE CHECK · MERGED", "—", "ARRIVED", GREEN),
+        ("6 NOV", "MATERIALIZE", "#40522 CATALOG QUERY VALIDATION · MERGED", "—", "ARRIVED", GREEN),
+        ("9 NOV", "SIEMENS WINCC OA", "#38 PINNED BRIDGE EXAMPLES · MERGED", "—", "ARRIVED", GREEN),
         ("2026", "COORD-HUB", "AGENT COORDINATION · HUMAN APPROVAL", "—", "BOARDING", GREEN),
     ]
     sections = [("DEPARTURES", "BREAKER · records that left the research", departures),
@@ -148,7 +150,7 @@ def board_svg(snap: dict, total: int, last_day: str, days: int) -> str:
     arr_desc = "; ".join(f"{t} {r} {d} {s}" for t, r, d, c, s, _ in arrivals)
     desc = f"Alex Gercog, playb0t. Departures: {dep_desc}. Arrivals: {arr_desc}. {total:,} downloads since the private report; {days} days without a fix."
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="tb db" xml:space="preserve">',
-           '<title id="tb">Split-flap board: departures are the CVE records of the mcp-remote research and the open fix for the current release; arrivals are the merged pull requests in Supabase, dashboard-icons, Alibaba Cloud iac-code, Quarkus, Tencent WeKnora, VS Code docs and NVIDIA NeMo Agent Toolkit, and coord-hub</title>',
+           '<title id="tb">Split-flap board: departures are the CVE records of the mcp-remote research and the open fix for the current release; arrivals are the merged pull requests in Supabase, dashboard-icons, Alibaba Cloud iac-code, Quarkus, Tencent WeKnora, VS Code docs, NVIDIA NeMo Agent Toolkit, Materialize and Siemens WinCC OA, and coord-hub</title>',
            f'<desc id="db">{esc(desc)}</desc>',
            f'<rect width="{W}" height="{H}" rx="18" fill="#010607"/>',
            f'<rect x="10" y="10" width="{W-20}" height="{H-20}" rx="14" fill="#031417" stroke="#0b3a40"/>',
@@ -200,7 +202,7 @@ def board_svg(snap: dict, total: int, last_day: str, days: int) -> str:
             t_row += 0.18
         y += 60
     ty = H - 40
-    ticker = (f"{total:,} NPM DOWNLOADS SINCE THE PRIVATE REPORT OF 17 FEB 2026   ·   {PATH_RELEASES[0]} STABLE RELEASES CARRY THE PATH, {PATH_RELEASES[1]} TO {TESTED[0]}   ·   "
+    ticker = (f"{total:,} NPM DOWNLOADS SINCE THE PRIVATE REPORT OF 17 FEB 2026   ·   {PATH_RELEASES[0]} STABLE RELEASES CARRY THE PATH, {PATH_RELEASES[1]} TO {PATH_RELEASES[2]}   ·   {TESTED[0]} RUN {TESTED[1]}: ALL SEVEN FINDINGS IN PLACE   ·   "
               f"SELECTED CODE AND NAMESPACE SIGNATURES UNDER 12 OTHER NPM NAMES AND IN 8 OTHER GIT REPOSITORIES   ·   THE MCP SDKS FIXED THIS CLASS IN SEPTEMBER, THE BRIDGE DID NOT   ·   "
               f"THIS PAGE MAKES 0 REQUESTS TO THIRD-PARTY SERVERS   ·   DATA READ {snap['read_at_utc'][:10]} FROM API.NPMJS.ORG AND CVEAWG.MITRE.ORG, RE-RENDERED DAILY   ·   ")
     out.append(f'<clipPath id="tk"><rect x="{x_start}" y="{ty-20}" width="{W-120}" height="30"/></clipPath>')
