@@ -1,5 +1,5 @@
 {
- "read_at_utc": "2026-11-18T15:47:44+00:00",
+ "read_at_utc": "2026-11-19T15:52:55+00:00",
  "package": "mcp-remote",
  "daily": [
   {
@@ -811,7 +811,7 @@
    "day": "2026-09-06"
   },
   {
-   "downloads": 0,
+   "downloads": 111596,
    "day": "2026-09-07"
   },
   {
@@ -1097,10 +1097,14 @@
   {
    "downloads": 172489,
    "day": "2026-11-17"
+  },
+  {
+   "downloads": 192918,
+   "day": "2026-11-18"
   }
  ],
- "latest_version": "0.16.6",
- "latest_published": "2026-11-11",
+ "latest_version": "0.16.7",
+ "latest_published": "2026-11-19",
  "records": {
   "CVE-2026-51996": {
    "state": "PUBLISHED",
